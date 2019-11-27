@@ -1,0 +1,22 @@
+{
+	"model_name":"Categoria",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"categoria",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+        }
+    ],
+
+    "relationships": [
+        {
+            "name": "producto",
+            "type": "hasMany",
+            "class": "App\\Producto"
+        }
+    ]
+	
+}

@@ -1,0 +1,40 @@
+{
+	"model_name":"Contacto",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"contactos",
+    "fields": [		
+        {
+            "name": "idUsuario",
+            "type": "bigint#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "idUsuario",
+            "references": "id",
+            "on": "usuario",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "telefono",
+            "type": "hasMany",
+            "class": "App\\Telefono"
+        },
+        {
+            "name": "direccion",
+            "type": "hasMany",
+            "class": "App\\Direccion"
+        },
+        {
+            "name": "usuario",
+            "type": "hasOne",
+            "class": "App\\Usuario"           
+        }
+    ]
+	
+}

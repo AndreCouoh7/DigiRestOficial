@@ -1,0 +1,52 @@
+{
+	"model_name":"Mesa",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"mesas",
+    "fields": [	
+        {
+            "name": "idZona",
+            "type": "bigint#unsigned" 
+        },
+        {
+            "name": "numero",
+            "type": "string" 
+        }  
+        
+    ],
+    "foreign_keys": [
+        {
+            "column": "idZona",
+            "references": "id",
+            "on": "zona",
+            "onDelete": "cascade"
+        }
+
+    ],
+    
+    "relationships": [
+        {
+            "name": "orden",
+            "type": "hasMany",
+            "class": "App\\Orden"
+        },
+        {
+            "name": "zona",
+            "type": "hasOne",
+            "class": "App\\Zona"
+        },
+        {
+            "name": "asignacion",
+            "type": "hasMany",
+            "class": "App\\Asignacion"
+        },
+        {
+            "name": "silla",
+            "type": "hasMany",
+            "class": "App\\Silla"
+        }
+
+    ]
+	
+}

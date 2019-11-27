@@ -1,0 +1,28 @@
+{
+	"model_name":"Cuenta",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"cuentas",
+    "fields": [	
+        { 
+            "name": "numeroOrden",
+            "type": "number"
+        }
+    ],
+    
+       
+    "relationships": [
+        {
+            "name": "orden",
+            "type": "hasMany",
+            "class": "App\\Orden"
+        },
+        {
+            "name": "ticket",
+            "type": "hasOne",
+            "class": "App\\Ticket"
+        }
+    ]
+	
+}

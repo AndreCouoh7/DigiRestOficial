@@ -1,0 +1,49 @@
+{
+	"model_name":"Pago",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"pagos",
+    "fields": [
+        {
+            "name": "cantidadPago",
+            "type": "number"
+        },
+        {
+            "name": "fechaPago",
+            "type": "date"
+        },	
+        {
+            "name": "idCajero",
+            "type": "bigint#unsigned"
+        },
+        {
+            "name": "idCliente",
+            "type": "bigint#unsigned"
+        }
+
+    ],
+    "foreign_keys": [
+        {
+            "column": "idCajero",
+            "references": "id",
+            "on": "cajero",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "cajero",
+            "type": "hasOne",
+            "class": "App\\Cajero"           
+        },
+        {
+            "name": "cliente",
+            "type": "hasMany",
+            "class": "App\\Cliente"           
+        }
+    ]
+
+	
+}

@@ -1,0 +1,44 @@
+{
+	"model_name":"Orden",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"ordenes",
+    "fields": [		
+        {
+            "name": "Numero",
+            "type": "number"
+        },
+
+        {
+            "name": "idMesa",
+            "type": "bigint#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "idMesa",
+            "references": "id",
+            "on": "mesas",
+            "onDelete": "cascade"
+        }
+        
+    ],
+    "relationships": [
+        {
+            "name": "mesa",
+            "type": "belongsTo",
+            "class": "App\\Mesa"
+        },
+        {
+            "name": "cuenta",
+            "type": "hasOne",
+            "class": "App\\Cuenta"
+        },
+        {
+            "name": "detalleorden",
+            "type": "hasMany",
+            "class": "App\\DetalleOrden"
+        }
+    ]
+}

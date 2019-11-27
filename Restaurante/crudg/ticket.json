@@ -1,0 +1,37 @@
+{
+	"model_name":"Ticket",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"tickets",
+    "fields": [	
+        { 
+            "name": "iva",
+            "type": "number"
+        },
+        {
+            "name": "total",
+            "type": "number"
+        },
+        {
+            "name": "idCuenta",
+            "type": "bigint#unsigned"
+        }
+
+    ],
+    
+       
+    "relationships": [
+        {
+            "name": "cuenta",
+            "type": "belongsTo",
+            "class": "App\\Cuenta"
+        },
+        {
+            "name": "pago",
+            "type": "hasMany",
+            "class": "App\\Pago"
+        }
+    ]
+	
+}

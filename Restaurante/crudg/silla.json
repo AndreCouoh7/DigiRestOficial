@@ -1,0 +1,38 @@
+{
+	"model_name":"Silla",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"sillas",
+    "fields": [		
+        {
+            "name": "numeroSilla",
+            "type": "number"
+        },
+        {
+            "name": "mesaCorresponde",
+            "type": "number"
+        },
+        {
+            "name": "idMesa",
+            "type": "bigint#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "idMesa",
+            "references": "id",
+            "on": "mesa",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "mesa",
+            "type": "hasOne",
+            "class": "App\\Mesa"
+        }
+    ]
+	
+}

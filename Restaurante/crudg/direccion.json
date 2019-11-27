@@ -1,0 +1,64 @@
+{
+	"model_name":"Direccon",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"direccion",
+    "fields": [	
+        
+        {
+            "name": "idContacto",
+            "type": "bigint#unsigned"
+        },	
+        {
+            "name": "cp",
+            "type": "number"
+        },
+        {
+            "name": "municipio",
+            "type": "string"
+        },
+        {
+            "name": "estado",
+            "type": "string"
+        },
+        {
+            "name": "localidad",
+            "type": "string"
+        },
+        {
+            "name": "calle",
+            "type": "string"
+        },
+        {
+            "name": "numeroInterior",
+            "type": "number"
+        },
+        {
+            "name": "numeroExterior",
+            "type": "number"
+        },
+        {
+            "name": "cruzamiento",
+            "type": "number"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "idContacto",
+            "references": "id",
+            "on": "contacto",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "contacto",
+            "type": "hasOne",
+            "class": "App\\Contacto"
+        }
+        
+    ]
+	
+}

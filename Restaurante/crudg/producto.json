@@ -1,0 +1,48 @@
+{
+	"model_name":"Producto",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"productos",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "descripcion",
+            "type": "string"
+        },
+        {
+            "name": "precio",
+            "type": "number"
+        },
+        {
+            "name": "idCategoria",
+            "type": "bigint#unsigned"
+        }     
+    ],
+    "foreign_keys": [
+        {
+            "column": "idCategoria",
+            "references": "id",
+            "on": "categoria",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "detalleordenes",
+            "type": "hasMany",
+            "class": "App\\DetalleOrden"
+        },
+        {
+            "name": "categoria",
+            "type": "belongsTo",
+            "class": "App\\Categoria"
+        }
+    ]
+    
+
+}

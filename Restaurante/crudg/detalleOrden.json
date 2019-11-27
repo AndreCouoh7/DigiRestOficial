@@ -1,0 +1,58 @@
+{
+	"model_name":"DetalleOrden",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"detalleOrdenes",
+    "fields": [	
+        {
+            "name": "idOrden",
+            "type": "bigint#unsigned"
+        },
+        {
+            "name": "idProducto",
+            "type": "bigint#unsigned"
+        },
+        {
+            "name" : "cantidad",
+            "type" : "number"
+        },
+        {
+            "name" : "precio",
+            "type" : "number"
+        }
+      
+        
+    ],
+    "foreign_keys": [
+        {
+            "column": "idOrden",
+            "references": "id",
+            "on": "ordenes",
+            "onDelete": "cascade" 
+        },
+        {
+            "column": "idProducto",
+            "references": "id",
+            "on": "productos",
+            "onDelete": "cascade" 
+        }
+        
+
+
+    ],
+       
+    "relationships": [
+        {
+            "name": "orden",
+            "type": "belongsTo",
+            "class": "App\\Orden"
+        },
+        {
+            "name": "producto",
+            "type": "belongsTo",
+            "class": "App\\Producto"
+        }
+    ]
+	
+}

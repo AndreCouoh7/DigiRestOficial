@@ -1,0 +1,49 @@
+{
+	"model_name":"Asignacion",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"asignaciones",
+    "fields": [		
+        { 
+            "name": "fechaAsignacion",
+            "type": "date"
+        },
+        { 
+            "name": "idMesa",
+            "type": "bigint#unsigned"
+        },
+        {
+            "name": "idMesero",
+            "type": "bigint#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "idMesa",
+            "references": "id",
+            "on": "mesa",
+            "onDelete": "cascade"
+        },
+        {
+            "column": "idMesero",
+            "references": "id",
+            "on": "mesero",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "mesero",
+            "type": "belongsTo",
+            "class": "App\\Mesero"
+        },
+        {
+            "name": "mesa",
+            "type": "belongsTo",
+            "class": "App\\Mesa"           
+        }
+    ]
+	
+}

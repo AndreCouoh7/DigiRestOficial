@@ -1,0 +1,35 @@
+{
+	"model_name":"Cajero",
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"cajeros",
+    "fields": [		
+               {
+            "name": "idUsuario",
+            "type": "bigint#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "idUsuario",
+            "references": "id",
+            "on": "usuario",
+            "onDelete": "cascade"
+        }
+
+    ],
+    "relationships": [
+        {
+            "name": "pago",
+            "type": "hasMany",
+            "class": "App\\Pago"
+        },
+        {
+            "name": "usuario",
+            "type": "belongsTo",
+            "class": "App\\Usuario"           
+        }
+    ]
+	
+}

@@ -1,0 +1,67 @@
+{
+	"model_name":"Usuario",
+    "soft_deletes":"yes",
+    "pk": "id",
+	"localize":"yes",
+	"table":"usuarios",
+    "fields": [	
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "apellido",
+            "type": "string"
+        },
+        {
+            "name": "direccion",
+            "type": "string"
+        },
+        {
+            "name": "telefono",
+            "type": "string"
+        },
+        {
+            "name": "fechaNacimiento",
+            "type": "date"
+        },
+        {
+            "name": "correo",
+            "type": "string"
+        },
+        {
+            "name": "tipo",
+            "type": "select",
+            "options": {
+                "opcion1": "Mesero",
+                "opcion2": "Cajero",
+				"opcion3": "Cliente"
+            }
+            
+        }
+],
+ 
+    "relationships": [
+        {
+            "name": "contacto",
+            "type": "hasMany",
+            "class": "App\\Contacto"           
+        },
+        {
+            "name": "mesero",
+            "type": "belongsTo",
+            "class": "App\\Mesero"           
+        },
+        {
+            "name": "cajero",
+            "type": "belongsTo",
+            "class": "App\\Cajero"           
+        },
+        {
+            "name": "cliente",
+            "type": "belongsTo",
+            "class": "App\\Cliente"           
+        }
+    ]
+	
+}
