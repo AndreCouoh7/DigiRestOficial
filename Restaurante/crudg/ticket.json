@@ -22,15 +22,16 @@
     
        
     "relationships": [
-        {
-            "name": "cuenta",
-            "type": "belongsTo",
-            "class": "App\\Cuenta"
-        },
+        
         {
             "name": "pago",
             "type": "hasMany",
             "class": "App\\Pago"
+        },
+        {
+            "name": "ordenes",
+            "type": "hasMany",
+            "class": "App\\Orden"
         }
     ]
 	

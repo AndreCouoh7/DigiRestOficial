@@ -40,12 +40,8 @@
             "name": "asignacion",
             "type": "hasMany",
             "class": "App\\Asignacion"
-        },
-        {
-            "name": "silla",
-            "type": "hasMany",
-            "class": "App\\Silla"
         }
+        
 
     ]
 	

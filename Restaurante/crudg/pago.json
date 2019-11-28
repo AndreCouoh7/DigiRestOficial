@@ -29,6 +29,12 @@
             "references": "id",
             "on": "cajero",
             "onDelete": "cascade"
+        },
+        {
+            "column": "idCliente",
+            "references": "id",
+            "on": "cliente",
+            "onDelete": "cascade"
         }
 
     ],
