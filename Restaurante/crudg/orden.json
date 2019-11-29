@@ -37,8 +37,8 @@
         },
         {
             "name": "ticket",
-            "type": "hasMany",
-            "class": "App\\Orden"
+            "type": "hasOne",
+            "class": "App\\Ticket"
         }
 
 

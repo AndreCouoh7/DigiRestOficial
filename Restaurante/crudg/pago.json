@@ -41,12 +41,12 @@
     "relationships": [
         {
             "name": "cajero",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Cajero"           
         },
         {
             "name": "cliente",
-            "type": "hasMany",
+            "type": "belongsTo",
             "class": "App\\Cliente"           
         }
     ]

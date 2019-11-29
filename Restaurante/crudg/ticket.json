@@ -14,13 +14,21 @@
             "type": "number"
         },
         {
-            "name": "idCuenta",
+            "name": "idOrden",
             "type": "bigint#unsigned"
         }
 
     ],
+    "foreign_keys": [
+        {
+            "column": "idOrden",
+            "references": "id",
+            "on": "orden",
+            "onDelete": "cascade"
+        }
+        
+    ],
     
-       
     "relationships": [
         
         {
@@ -29,8 +37,8 @@
             "class": "App\\Pago"
         },
         {
-            "name": "ordenes",
-            "type": "hasMany",
+            "name": "orden",
+            "type": "belongsTo",
             "class": "App\\Orden"
         }
     ]

@@ -33,7 +33,7 @@
         },
         {
             "name": "zona",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Zona"
         },
         {

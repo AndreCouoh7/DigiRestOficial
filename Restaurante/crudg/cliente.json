@@ -26,8 +26,8 @@
             "class": "App\\Usuario"           
         },
         {
-            "name":"pago",
-            "type":"belongsTo",
+            "name":"pagos",
+            "type":"hasMany",
             "class" : "App\\Pago"
         }
 
