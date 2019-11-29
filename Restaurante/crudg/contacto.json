@@ -21,18 +21,18 @@
     ],
     "relationships": [
         {
-            "name": "telefono",
+            "name": "telefonos",
             "type": "hasMany",
             "class": "App\\Telefono"
         },
         {
-            "name": "direccion",
+            "name": "direcciones",
             "type": "hasMany",
             "class": "App\\Direccion"
         },
         {
             "name": "usuario",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Usuario"           
         }
     ]

@@ -20,7 +20,12 @@
         {
             "name": "idCliente",
             "type": "bigint#unsigned"
+        },
+        {
+            "name": "idTicket",
+            "type": "bigint#unsigned"
         }
+
 
     ],
     "foreign_keys": [
@@ -35,6 +40,12 @@
             "references": "id",
             "on": "cliente",
             "onDelete": "cascade"
+        },
+        {
+            "column": "idTicket",
+            "references": "id",
+            "on": "ticket",
+            "onDelete": "cascade"
         }
 
     ],
@@ -48,6 +59,11 @@
             "name": "cliente",
             "type": "belongsTo",
             "class": "App\\Cliente"           
+        },
+        {
+            "name": "ticket",
+            "type": "belongsTo",
+            "class": "App\\Ticket"           
         }
     ]
 

@@ -19,7 +19,7 @@ class OrdenSeeder extends Seeder
             'telefono' => 9971386229,
             'fechaNacimiento' => 1987/01/01,
              'correo' => 'berlin@gmail.com', 
-             'tipo'=> 'Cajero'
+             'tipo'=> 'Mesero'
         ]) ;
         DB::table('usuarios')->insert([
             'nombre'=>'Marcos',
@@ -28,24 +28,25 @@ class OrdenSeeder extends Seeder
             'telefono' => 9971386229,
             'fechaNacimiento' => 1987/01/01,
              'correo' => 'marcos@gmail.com', 
-             'tipo'=> 'Mesero'
+             'tipo'=> 'Cliente'
         ]) ;
         DB::table('usuarios')->insert([
             'nombre'=>'Cielo',
             'apellido' =>'Pacheco',
             'direccion'=>'C-32' ,
             'telefono' => 9971386229,
-            'fechaNacimiento' => 02/02/1989,
+            'fechaNacimiento' => 1987/02/01,
              'correo' => 'cielo@gmail.com', 
-             'tipo'=> 'Cliente'
+             'tipo'=> 'Cajero'
         ]);
         DB::table('usuarios')->insert([
             'nombre' => 'Joel',
             'apellido'=> 'Pech',
              'direccion'=>'C-17',
-              'telefono' => '9971386229',
-              'fechaNacimiento' => '1998-11-09',
-              'correo' => 'joel@gmail.com'
+              'telefono' => 9971386229,
+              'fechaNacimiento' => 1986/05/23,
+              'correo' => 'joel@gmail.com',
+              'tipo'=>'Cliente'
         ]);
         DB::table('categorias')->insert([
             'nombre'=> 'Bebidas'
@@ -99,7 +100,7 @@ class OrdenSeeder extends Seeder
             'idUsuario' => 1
         ]) ;
         DB::table('asignaciones')->insert([
-            'fechaAsignacion'=>'12/02/2019',
+            'fechaAsignacion' => 2002/02/02,
              'idMesa' => 1,
               'idMesero'=>1
         ]) ;
@@ -116,10 +117,32 @@ class OrdenSeeder extends Seeder
         ]) ;
         DB::table('pagos')->insert([
             'cantidadPago'=> 89,
-             'fechaPago'=>'15/09/2019',
+             'fechaPago'=> '1999/09/12',
               'idCajero'=> 1,
-               'idCliente'=>1
+               'idCliente'=>1,
+               'idTicket'=>1
         ]) ;
+        DB::table('contactos')->insert([
+            'idUsuario'=> 4
+        ]) ;
+        DB::table('telefonos')->insert([
+            'numero'=> 9971386229,
+            'idContacto'=>1
+        ]) ;
+        DB::table('direcciones')->insert([
+            'idContacto'=>1,
+            'cp'=>97800,
+            'municipio'=>'Maxcanu',
+            'estado'=>'Yucatan',
+             'localidad'=>'Maxcanu',
+              'calle'=> 17,
+            'numeroInterior'=>32,
+             'numeroExterior'=> 0,
+              'cruzamiento'=> 32
+        ]) ;
+
+
+        
         
     }
 }

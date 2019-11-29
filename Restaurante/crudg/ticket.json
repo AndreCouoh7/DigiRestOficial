@@ -33,7 +33,7 @@
         
         {
             "name": "pago",
-            "type": "hasMany",
+            "type": "hasOne",
             "class": "App\\Pago"
         },
         {

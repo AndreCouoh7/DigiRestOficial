@@ -21,7 +21,7 @@
     ],
     "relationships": [
         {
-            "name": "asignacion",
+            "name": "asignaciones",
             "type": "hasMany",
             "class": "App\\Asignacion"
         },

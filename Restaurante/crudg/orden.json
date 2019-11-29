@@ -31,7 +31,7 @@
             "class": "App\\Mesa"
         },
         {
-            "name": "detalleorden",
+            "name": "detalleordenes",
             "type": "hasMany",
             "class": "App\\DetalleOrden"
         },

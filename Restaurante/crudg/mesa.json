@@ -27,7 +27,7 @@
     
     "relationships": [
         {
-            "name": "orden",
+            "name": "ordenes",
             "type": "hasMany",
             "class": "App\\Orden"
         },
@@ -37,7 +37,7 @@
             "class": "App\\Zona"
         },
         {
-            "name": "asignacion",
+            "name": "asignaciones",
             "type": "hasMany",
             "class": "App\\Asignacion"
         }

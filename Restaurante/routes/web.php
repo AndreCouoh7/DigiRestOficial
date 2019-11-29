@@ -25,3 +25,19 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
+Route::resource('usuarios', 'UsuariosController');
+Route::resource('contactos', 'ContactosController');
+Route::resource('direcciones', 'DireccionesController');
+Route::resource('telefonos', 'TelefonosController');
+Route::resource('clientes', 'ClientesController');
+Route::resource('meseros', 'MeserosController');
+Route::resource('cajeros', 'CajerosController');
+Route::resource('zonas', 'ZonasController');
+Route::resource('mesas', 'MesasController');
+Route::resource('asignaciones', 'AsignacionesController');
+Route::resource('categorias', 'CategoriasController');
+Route::resource('productos', 'ProductosController');
+Route::resource('ordenes', 'OrdenesController');
+Route::resource('detalle-ordenes', 'DetalleOrdenesController');
+Route::resource('tickets', 'TicketsController');
+Route::resource('pagos', 'PagosController');

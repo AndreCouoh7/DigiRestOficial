@@ -55,7 +55,7 @@
     "relationships": [
         {
             "name": "contacto",
-            "type": "hasOne",
+            "type": "belongsTo",
             "class": "App\\Contacto"
         }
         
