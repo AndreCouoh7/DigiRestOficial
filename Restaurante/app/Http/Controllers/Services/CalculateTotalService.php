@@ -1,30 +1,32 @@
 <?php
 
 namespace App\Http\Controllers\Services;
+
 use App\Http\Controllers\Controller;
 use App\Contracts\ICalculateTotal;
-use App\Models\Cuenta;
+use App\DetalleOrden;
+use App\Orden;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CalculateTotalService	extends Controller
-	implements ICalculateTotal{
-	public function CalcularTotal($idOrden)
-	{	
-	   $orden = Ordendetalle::firstOrFail($idOrden);
-	   if ($orden==null) {
-		throw new Exception("Error no existe la orden");
+implements ICalculateTotal
+{
+	public function CalcularTotal(Request $ordenx)
+	{
+		$orden = Orden::where("id", $ordenx->idOrden)->first();
+
+		if ($orden == null) {
+			throw new Exception("Error no existe la orden");
 		}
 
-		$total=0;
-		  foreach ($orden->ordendetalle as $itemOrden) {
-			  $cantidad=$itemOrden->cantidad;
-			  $precio=$itemOrden->precio;
+		$total = 0;
+		foreach ($orden->DetalleOrdenes as $itemOrden) {
+			$cantidad = $itemOrden->cantidad;
+			$precio = $itemOrden->precio;
 
-			  $total += $cantidad*$precio;
-		  }
-		  $x= new Cuenta;
-		  $x ->total =$total;
-		  $x->save();
-		  return array('r'=>$total);
-	   	
+			$total += $cantidad * $precio;
+		}
+		return array('r' => $total);
 	}
 }

@@ -24,3 +24,5 @@ Route::post('/V1/IRegistrarOrden/orden', 'Services\RegistrarOrdenService@registr
     #adminlte_api_routes
 });
 
+Route::post('/V1/ICalculateTotal/Total','Services\CalculateTotalService@CalcularTotal');
+
