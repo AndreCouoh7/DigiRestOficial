@@ -37,7 +37,7 @@ class Mesa extends Model
     }
     public function asignaciones()
     {
-        return $this->hasMany('App\Asignacion');
+        return $this->hasMany('App\Asignacion','idMesa');
     }
     
 }
