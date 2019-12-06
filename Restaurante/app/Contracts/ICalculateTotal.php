@@ -2,8 +2,9 @@
 
 namespace App\Contracts;
 
-interface ICalculateTotal{
-	
-	///Operacion aritmetica de suma
-	public function CalcularTotal($idOrden);
+use Illuminate\Http\Request;
+
+interface ICalculateTotal
+{
+	public function CalcularTotal(Request $ordenx);
 }
