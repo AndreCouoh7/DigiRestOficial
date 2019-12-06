@@ -24,5 +24,6 @@ Route::post('/V1/IRegistrarOrden/orden', 'Services\RegistrarOrdenService@registr
     #adminlte_api_routes
 });
 
+Route::post('/V1/IAgregarProductoOrden/agregar/{idOrden}/{idProducto}/{cantidad}/{precio}','Services\AgregarProductoOrdenService@Agregar');
 Route::post('/V1/ICalculateTotal/Total','Services\CalculateTotalService@CalcularTotal');
 Route::post('/V1/IAsignacion/asignar/{idmesero}/{idmesa}', 'Services\AsignacionService@asignar');	
