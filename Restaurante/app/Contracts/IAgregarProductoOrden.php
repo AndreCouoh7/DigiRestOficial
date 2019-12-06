@@ -1,5 +1,4 @@
 <?php
-//foreign_key
 //Agregar producto a la orden
 namespace App\Contracts;
 

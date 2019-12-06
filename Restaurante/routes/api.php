@@ -23,5 +23,5 @@ Route::post('/V1/IRegistrarOrden/orden', 'Services\RegistrarOrdenService@registr
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_api_routes
 });
-
+//prueba
 Route::post('/V1/IAgregarProductoOrden/agregar/{idOrden}/{idProducto}/{cantidad}/{precio}','Services\AgregarProductoOrdenService@Agregar');

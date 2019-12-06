@@ -1,7 +1,7 @@
 <?php
 
 namespace Tests\Unit;
-//"./vendor/bin/phpunit"
+//"./vendor/bin/phpunit"(Prueba)
 use Tests\TestCase;
 use App\Orden;
 use App\DetalleOrden;

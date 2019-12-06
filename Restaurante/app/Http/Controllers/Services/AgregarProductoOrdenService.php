@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Contracts\IAgregarProductoOrden;
 use App\Orden;
 use App\DetalleOrden;
-//agregar producto a la orden
+//agregar producto a la orden. 
 class AgregarProductoOrdenService extends Controller 
 implements IAgregarProductoOrden{
 	public function Agregar($idOrden, $idProducto, $cantidad, $precio)
