@@ -9,11 +9,22 @@
     {!! $errors->first('total', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('idOrden') ? 'has-error' : ''}}">
-    <label for="idOrden" class="control-label">{{ 'Idorden' }}</label>
-    <input class="form-control" name="idOrden" type="number" id="idOrden" value="{{ isset($ticket->idOrden) ? $ticket->idOrden : ''}}" >
-    {!! $errors->first('idOrden', '<p class="help-block">:message</p>') !!}
-</div>
+    <label for="idOrden" class="control-label">{{ 'Numero de Orden' }}</label>
 
+    <select class="form-control" name="idOrden" id="idOrden">
+    @foreach($norden as $orden)
+    <option value="{{$orden->id}}"
+    @if(isset($norden->IdOrden) && $norden->IdOrden==$orden->id)
+    selected
+    @endif
+    >
+    {{$orden->Numero}}
+    </option>
+    @endforeach
+    </select>
+    {!! $errors->first('idOrden', '<p class="help-block">:message</p>') !!}
+</div> 
+ 
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
