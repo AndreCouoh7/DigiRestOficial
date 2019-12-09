@@ -33,7 +33,7 @@ class Orden extends Model
     }
     public function detalleordenes()
     {
-        return $this->hasMany('App\DetalleOrden','idOrden');
+        return $this->hasMany('App\DetalleOrden', 'idOrden');
     }
     public function ticket()
     {

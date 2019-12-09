@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Mesa;
 use App\Orden;
 use Illuminate\Http\Request;
 
@@ -38,7 +37,8 @@ class OrdenesController extends Controller
      */
     public function create()
     {
-        return view('ordenes.create');
+        $mesa = Mesa::All();
+        return view('ordenes.create', compact('mesa'));
     }
 
     /**
@@ -68,8 +68,8 @@ class OrdenesController extends Controller
     public function show($id)
     {
         $ordene = Orden::findOrFail($id);
-
-        return view('ordenes.show', compact('ordene'));
+        $mesa = Mesa::All();
+        return view('ordenes.show', compact('ordene','mesa'));
     }
 
     /**
@@ -82,8 +82,8 @@ class OrdenesController extends Controller
     public function edit($id)
     {
         $ordene = Orden::findOrFail($id);
-
-        return view('ordenes.edit', compact('ordene'));
+        $mesa = Mesa::All();
+        return view('ordenes.edit', compact('mesa','ordene'));
     }
 
     /**

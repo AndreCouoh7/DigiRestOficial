@@ -14,8 +14,19 @@
     {!! $errors->first('precio', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('idCategoria') ? 'has-error' : ''}}">
-    <label for="idCategoria" class="control-label">{{ 'Idcategoria' }}</label>
-    <input class="form-control" name="idCategoria" type="number" id="idCategoria" value="{{ isset($producto->idCategoria) ? $producto->idCategoria : ''}}" >
+    <label for="idCategoria" class="control-label">{{ 'Numero De categoria' }}</label>
+    <select class="form-control" name="idCategoria" type="number" id="idCategoria">
+    @foreach($categoria as $g)
+    <option value ="{{$g->id}}"
+
+        @if(isset($categoria->idCategoria) && $categoria->idCategoria==$g->id)
+         selected 
+         @endif
+        >
+    {{$g->nombre}}
+    </option>
+    @endforeach
+    </select>
     {!! $errors->first('idCategoria', '<p class="help-block">:message</p>') !!}
 </div>
 

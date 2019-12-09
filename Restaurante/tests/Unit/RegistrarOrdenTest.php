@@ -1,10 +1,7 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
 class ExampleTest extends TestCase
 {
     /**
@@ -28,21 +25,16 @@ class ExampleTest extends TestCase
             ])
         
         );
-
         $response=$this->json('POST',
 		'/V1/IRegistrarOrden/orden',
 		$orden
 		);
         
-
 $this->assertDatabaseHas('ordenes', [
     'idMesa' => '1',
 ]);
-
-
             
     
-
         
     }
 }
