@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Cajero;
+use App\Usuario;
 use Illuminate\Http\Request;
 
 class CajerosController extends Controller
@@ -37,7 +38,10 @@ class CajerosController extends Controller
      */
     public function create()
     {
-        return view('cajeros.create');
+        $usuario= Usuario::where('tipo','opcion2')->get();
+        
+        return view('cajeros.create', compact('usuario'));
+        
     }
 
     /**
@@ -81,8 +85,9 @@ class CajerosController extends Controller
     public function edit($id)
     {
         $cajero = Cajero::findOrFail($id);
+        $usuario= Usuario::where('tipo','opcion2')->get();
 
-        return view('cajeros.edit', compact('cajero'));
+        return view('cajeros.edit', compact('cajero','usuario'));
     }
 
     /**
