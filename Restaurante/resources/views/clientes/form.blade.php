@@ -1,5 +1,5 @@
 <div class="form-group {{ $errors->has('idUsuario') ? 'has-error' : ''}}">
-    <label for="idUsuario" class="control-label">{{ 'Idusuario' }}</label>
+    <label for="idUsuario" class="control-label">{{ 'Nombre de cliente' }}</label>
 
 
 
