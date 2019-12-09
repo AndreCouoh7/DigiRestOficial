@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Usuario;
 use App\Cliente;
 use Illuminate\Http\Request;
 
@@ -37,7 +37,8 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        $usuario = Usuario::where('tipo','opcion3')->get();
+        return view('clientes.create',compact('usuario'));
     }
 
     /**
@@ -67,8 +68,8 @@ class ClientesController extends Controller
     public function show($id)
     {
         $cliente = Cliente::findOrFail($id);
-
-        return view('clientes.show', compact('cliente'));
+        $usuario = Usuario::where('tipo','opcion3')->get();
+        return view('clientes.show', compact('cliente','usuario'));
     }
 
     /**
@@ -81,8 +82,8 @@ class ClientesController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::findOrFail($id);
-
-        return view('clientes.edit', compact('cliente'));
+        $usuario = Usuario::where('tipo','opcion3')->get();
+        return view('clientes.edit', compact('cliente','usuario'));
     }
 
     /**

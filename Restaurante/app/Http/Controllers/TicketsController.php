@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Orden;
+use App\Pago;
 use App\Ticket;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,9 @@ class TicketsController extends Controller
      */
     public function create()
     {
-        return view('tickets.create');
+        $norden=Orden::All();
+        $cpago=Pago::All();
+        return view('tickets.create', compact('norden','cpago'));
     }
 
     /**
@@ -83,8 +86,10 @@ class TicketsController extends Controller
     public function edit($id)
     {
         $ticket = Ticket::findOrFail($id);
-
-        return view('tickets.edit', compact('ticket'));
+        $norden=Orden::All();
+        $cpago=Pago::All();
+        return view('tickets.edit', compact('norden','cpago','ticket'));
+        
     }
 
     /**

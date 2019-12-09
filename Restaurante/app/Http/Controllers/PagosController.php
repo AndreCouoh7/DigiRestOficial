@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Cliente;
+use App\Cajero;
 use App\Pago;
+use App\Ticket;
 use Illuminate\Http\Request;
 
 class PagosController extends Controller
@@ -41,7 +43,15 @@ class PagosController extends Controller
      */
     public function create()
     {
-        return view('pagos.create');
+        $clientes= Cliente::All();
+        $cajeros= Cajero::All();
+        $tickets=Ticket::All();
+        return view('pagos.create', array(
+            'clientes'=> $clientes,
+            'cajeros'=>$cajeros,
+            'tickets'=>$tickets 
+        ));
+
     }
 
     /**
@@ -85,7 +95,15 @@ class PagosController extends Controller
     public function edit($id)
     {
         $pago = Pago::findOrFail($id);
-
+        $tickets=Ticket::All();
+        $cajeros=Cajero::All();
+        $clientes=Cliente::All();
+        return view ('pagos.edit', array(
+            'clientes'=> $clientes,
+            'cajeros'=>$cajeros,
+            'tickets'=>$tickets,
+            'pago'=>$pago
+        ));
         return view('pagos.edit', compact('pago'));
     }
 
