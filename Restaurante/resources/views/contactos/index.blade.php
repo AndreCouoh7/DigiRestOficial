@@ -30,14 +30,15 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>IdUsuario</th><th>Actions</th>
+                                        <th>#</th><th>Usuario</th><th>Tipo</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($contactos as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->idUsuario }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->usuario->nombre }} {{ $item->usuario->apellido }}</td>
+                                        <td>{{ __($item->usuario->tipo) }}</td>
                                         <td>
                                             <a href="{{ url('/contactos/' . $item->id) }}" title="View Contacto"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/contactos/' . $item->id . '/edit') }}" title="Edit Contacto"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

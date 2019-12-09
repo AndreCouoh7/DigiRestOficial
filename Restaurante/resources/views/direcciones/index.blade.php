@@ -30,14 +30,20 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>IdContacto</th><th>Cp</th><th>Municipio</th><th>Actions</th>
+                                    <th>#</th><th>IdContacto</th><th>Nombre</th><th>Calle</th>
+                                    <th>Cp</th><th>Localidad</th><th>Municipio</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($direcciones as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->idContacto }}</td><td>{{ $item->cp }}</td><td>{{ $item->municipio }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->idContacto }}</td>
+                                        <td>{{ $item->contacto->usuario->nombre }} {{ $item->contacto->usuario->apellido }}</td>
+                                         <td>{{ $item->calle }}</td>
+                                        <td>{{ $item->cp }}</td>
+                                        <td>{{ $item->localidad }}</td>
+                                        <td>{{ $item->municipio }}</td>
                                         <td>
                                             <a href="{{ url('/direcciones/' . $item->id) }}" title="View Direccione"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/direcciones/' . $item->id . '/edit') }}" title="Edit Direccione"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

@@ -27,7 +27,10 @@
                                     <tr>
                                         <th>ID</th><td>{{ $telefono->id }}</td>
                                     </tr>
-                                    <tr><th> IdContacto </th><td> {{ $telefono->idContacto }} </td></tr><tr><th> Numero </th><td> {{ $telefono->numero }} </td></tr>
+                                <tr><th> IdContacto </th><td> {{ $telefono->idContacto }} </td></tr>
+                </tr><tr><th> Nombre </th><td> {{ $telefono->contacto->usuario->nombre }} </td></tr>
+                <tr><th> Apellido </th><td> {{ $telefono->contacto->usuario->apellido }} </td></tr>
+                                    <tr><th> Numero </th><td> {{ $telefono->numero }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

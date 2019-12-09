@@ -28,6 +28,12 @@
                                         <th>ID</th><td>{{ $direccione->id }}</td>
                                     </tr>
                                     <tr><th> IdContacto </th><td> {{ $direccione->idContacto }} </td></tr><tr><th> Cp </th><td> {{ $direccione->cp }} </td></tr><tr><th> Municipio </th><td> {{ $direccione->municipio }} </td></tr>
+                                    <th> Estado </th><td> {{ $direccione->estado }} </td></tr>
+                                    <th> Localidad </th><td> {{ $direccione->localidad }} </td></tr>
+                                    <th> Calle </th><td> {{ $direccione->calle }} </td></tr>
+                        <th> Num. Interior </th><td> {{ $direccione->numeroInterior }} </td></tr>
+                        <th> Num. Exterior </th><td> {{ $direccione->numeroExterior }} </td></tr>
+                        <th> Cruzamiento </th><td> {{ $direccione->cruzamiento }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

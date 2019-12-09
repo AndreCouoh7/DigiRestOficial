@@ -27,8 +27,13 @@
                                     <tr>
                                         <th>ID</th><td>{{ $contacto->id }}</td>
                                     </tr>
-                                    <tr><th> IdUsuario </th><td> {{ $contacto->idUsuario }} </td></tr>
+                                    <tr><th> IdUsuario </th><td> {{ $contacto->idUsuario }} 
+                            <tr><th> Nombre </th><td> {{ $contacto->usuario->nombre }} </td></tr>
+                        <tr><th> Apellido </th><td> {{ $contacto->usuario->apellido }} </td></tr>
+                        <tr><th> Tipo </th><td> {{ __($contacto->usuario->tipo) }} </td></tr>
+                                    </td></tr>
                                 </tbody>
+
                             </table>
                         </div>
 
