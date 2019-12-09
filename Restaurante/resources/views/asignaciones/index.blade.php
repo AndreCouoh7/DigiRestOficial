@@ -1,16 +1,16 @@
-@extends('layouts.app')
+@extends('adminlte::layouts.app')
 
-@section('content')
+@section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            
 
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Asignaciones</div>
                     <div class="card-body">
-                        <a href="{{ url('/asignaciones/create') }}" class="btn btn-success btn-sm" title="Add New Asignacione">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                        <a href="{{ url('/asignaciones/create') }}" class="btn btn-success btn-sm" title="Add New Asignacion">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Añadir Nuevo
                         </a>
 
                         <form method="GET" action="{{ url('/asignaciones') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>FechaAsignacion</th><th>IdMesa</th><th>IdMesero</th><th>Actions</th>
+                                        <th>#</th><th>FechaAsignacion</th><th>#Mesa | Zona</th><th>Mesero</th><th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($asignaciones as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->fechaAsignacion }}</td><td>{{ $item->idMesa }}</td><td>{{ $item->idMesero }}</td>
+                                     <td>{{ $item->id }}</td>
+                                    <td>{{ $item->fechaAsignacion }}</td><td>{{ $item->mesa->numero}} | {{$item->mesa->zona->nombre}}</td><td>{{ $item->mesero->usuario->nombre}} {{ $item->mesero->usuario->apellido}} </td>
                                         <td>
                                             <a href="{{ url('/asignaciones/' . $item->id) }}" title="View Asignacione"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/asignaciones/' . $item->id . '/edit') }}" title="Edit Asignacione"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

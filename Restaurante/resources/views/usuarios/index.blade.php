@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('adminlte::layouts.app')
 
-@section('content')
+@section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            
 
             <div class="col-md-9">
                 <div class="card">
@@ -30,14 +30,16 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Actions</th>
+                                        <th>#</th><th>Nombre</th><th>Apellido</th><th>Tipo</th><th>Direccion</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($usuarios as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nombre }}</td><td>{{ $item->apellido }}</td><td>{{ $item->direccion }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->nombre }}</td><td>{{ $item->apellido }}</td><td>
+                                            @lang($item->tipo)
+                                        </td><td>{{ $item->direccion }}</td>
                                         <td>
                                             <a href="{{ url('/usuarios/' . $item->id) }}" title="View Usuario"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/usuarios/' . $item->id . '/edit') }}" title="Edit Usuario"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

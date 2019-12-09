@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Usuario;
 use App\Mesero;
 use Illuminate\Http\Request;
 
@@ -37,7 +37,11 @@ class MeserosController extends Controller
      */
     public function create()
     {
-        return view('meseros.create');
+        
+        $usuarios = Usuario::where('tipo','opcion1')->get();
+        
+    
+        return view('meseros.create',compact('usuarios'));
     }
 
     /**
@@ -81,8 +85,14 @@ class MeserosController extends Controller
     public function edit($id)
     {
         $mesero = Mesero::findOrFail($id);
+        $usuarios = Usuario::where('tipo','opcion1')->get();
+        return view('meseros.edit',array(
+            'usuarios' =>$usuarios,
+            'mesero' => $mesero
+            
+        ));
 
-        return view('meseros.edit', compact('mesero'));
+        // return view('meseros.edit', compact('mesero'));
     }
 
     /**

@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('adminlte::layouts.app')
 
-@section('content')
+@section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            
 
             <div class="col-md-9">
                 <div class="card">
@@ -27,7 +27,13 @@
                                     <tr>
                                         <th>ID</th><td>{{ $usuario->id }}</td>
                                     </tr>
-                                    <tr><th> Nombre </th><td> {{ $usuario->nombre }} </td></tr><tr><th> Apellido </th><td> {{ $usuario->apellido }} </td></tr><tr><th> Direccion </th><td> {{ $usuario->direccion }} </td></tr>
+                                    <tr><th> Nombre </th><td> {{ $usuario->nombre }} </td></tr>
+                                     <tr><th> Apellido </th><td> {{ $usuario->apellido }} </td></tr>
+                                      <tr><th> Direccion  </th><td> {{ $usuario->direccion }} </td></tr>
+                                       <tr><th> Telefono </th><td> {{ $usuario->telefono }} </td></tr>
+                                        <tr><th> Fecha de Nacimiento </th><td> {{ $usuario->fechaNacimiento }} </td></tr>
+                                         <tr><th> Correo </th><td> {{ $usuario->correo }} </td></tr>
+                                         <tr><th> Tipo </th><td> {{ __($usuario->tipo) }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

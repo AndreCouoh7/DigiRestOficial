@@ -1,9 +1,8 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('adminlte::layouts.app')
+@section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+
 
             <div class="col-md-9">
                 <div class="card">
@@ -30,14 +29,16 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>IdUsuario</th><th>Actions</th>
+                                        <th>#</th><th>Nombre</th><th>Telefono</th><th>Tipo</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($meseros as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->idUsuario }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->usuario->nombre }} {{ $item->usuario->apellido }}</td>
+                                        <td>{{ $item->usuario->telefono }}</td>
+                                        <td>{{ __($item->usuario->tipo) }}</td>
                                         <td>
                                             <a href="{{ url('/meseros/' . $item->id) }}" title="View Mesero"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/meseros/' . $item->id . '/edit') }}" title="Edit Mesero"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
