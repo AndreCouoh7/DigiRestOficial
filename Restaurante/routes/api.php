@@ -27,3 +27,4 @@ Route::post('/V1/IRegistrarOrden/orden', 'Services\RegistrarOrdenService@registr
 Route::post('/V1/IAgregarProductoOrden/agregar/{idOrden}/{idProducto}/{cantidad}/{precio}','Services\AgregarProductoOrdenService@Agregar');
 Route::post('/V1/ICalculateTotal/Total','Services\CalculateTotalService@CalcularTotal');
 Route::post('/V1/IAsignacion/asignar/{idmesero}/{idmesa}', 'Services\AsignacionService@asignar');	
+Route::post('V1/ICalcularCambio/Cambio/{idTicket}/{efectivo}', 'Services\CalcularCambioService@Cambio');
