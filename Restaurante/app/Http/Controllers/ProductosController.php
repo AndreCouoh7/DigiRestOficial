@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -40,7 +41,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        return view('productos.create');
+        $categoria = Categoria::All();
+        return view('productos.create',compact('categoria'));
     }
 
     /**
@@ -84,8 +86,8 @@ class ProductosController extends Controller
     public function edit($id)
     {
         $producto = Producto::findOrFail($id);
-
-        return view('productos.edit', compact('producto'));
+        $categoria = Categoria::All();
+        return view('productos.edit', compact('producto','categoria'));
     }
 
     /**

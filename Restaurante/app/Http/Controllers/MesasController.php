@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Zona;
 use App\Mesa;
 use Illuminate\Http\Request;
 
@@ -38,7 +38,11 @@ class MesasController extends Controller
      */
     public function create()
     {
-        return view('mesas.create');
+     $zonas = Zona::All();
+     return view('mesas.create',array(
+        'zonas' => $zonas
+     ));
+    // return view('mesas.create');
     }
 
     /**
@@ -82,8 +86,13 @@ class MesasController extends Controller
     public function edit($id)
     {
         $mesa = Mesa::findOrFail($id);
-
-        return view('mesas.edit', compact('mesa'));
+        $zonas = Zona::All();
+        return view('mesas.edit',array(
+                'mesa' => $mesa,
+                'zonas' => $zonas
+        ));
+        
+        // return view('mesas.edit', compact('mesa'));
     }
 
     /**
@@ -101,7 +110,7 @@ class MesasController extends Controller
         
         $mesa = Mesa::findOrFail($id);
         $mesa->update($requestData);
-
+        
         return redirect('mesas')->with('flash_message', 'Mesa updated!');
     }
 

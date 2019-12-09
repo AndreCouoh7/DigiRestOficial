@@ -19,7 +19,7 @@ class OrdenSeeder extends Seeder
             'telefono' => 9971386229,
             'fechaNacimiento' => 1987/01/01,
              'correo' => 'berlin@gmail.com', 
-             'tipo'=> 'Mesero'
+             'tipo'=> 'opcion1'
         ]) ;
         DB::table('usuarios')->insert([
             'nombre'=>'Marcos',
@@ -28,7 +28,7 @@ class OrdenSeeder extends Seeder
             'telefono' => 9971386229,
             'fechaNacimiento' => 1987/01/01,
              'correo' => 'marcos@gmail.com', 
-             'tipo'=> 'Cliente'
+             'tipo'=> 'opcion2'
         ]) ;
         DB::table('usuarios')->insert([
             'nombre'=>'Cielo',
@@ -37,7 +37,7 @@ class OrdenSeeder extends Seeder
             'telefono' => 9971386229,
             'fechaNacimiento' => 1987/02/01,
              'correo' => 'cielo@gmail.com', 
-             'tipo'=> 'Cajero'
+             'tipo'=> 'opcion3'
         ]);
         DB::table('usuarios')->insert([
             'nombre' => 'Joel',
@@ -46,7 +46,16 @@ class OrdenSeeder extends Seeder
               'telefono' => 9971386229,
               'fechaNacimiento' => 1986/05/23,
               'correo' => 'joel@gmail.com',
-              'tipo'=>'Cliente'
+              'tipo'=>'opcion3'
+        ]);
+        DB::table('usuarios')->insert([
+            'nombre' => 'Lea',
+            'apellido'=> 'King',
+             'direccion'=>'C-43',
+              'telefono' => 9971386229,
+              'fechaNacimiento' => 1986/05/23,
+              'correo' => 'lea@gmail.com',
+              'tipo'=>'opcion1'
         ]);
         DB::table('categorias')->insert([
             'nombre'=> 'Bebidas'

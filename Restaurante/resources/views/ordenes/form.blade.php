@@ -4,8 +4,21 @@
     {!! $errors->first('Numero', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('idMesa') ? 'has-error' : ''}}">
-    <label for="idMesa" class="control-label">{{ 'Idmesa' }}</label>
-    <input class="form-control" name="idMesa" type="number" id="idMesa" value="{{ isset($ordene->idMesa) ? $ordene->idMesa : ''}}" >
+    <label for="idMesa" class="control-label">{{ 'Numero de mesa' }}</label>
+
+    <select class="form-control" name="idMesa" type="number" id="idMesa">
+    @foreach($mesa as $m)
+    <option value ="{{$m->id}}"
+
+        @if(isset($categoria->idMesa) && $mesa->idMesa==$m->id)
+         selected 
+         @endif
+        >
+    {{$m->numero}}
+    </option>
+    @endforeach
+    </select>
+
     {!! $errors->first('idMesa', '<p class="help-block">:message</p>') !!}
 </div>
 

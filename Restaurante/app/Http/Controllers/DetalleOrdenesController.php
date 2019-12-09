@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\DetalleOrden;
+use App\Orden;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class DetalleOrdenesController extends Controller
@@ -40,7 +42,9 @@ class DetalleOrdenesController extends Controller
      */
     public function create()
     {
-        return view('detalle-ordenes.create');
+        $orden = Orden::All();
+        $producto = Producto::All();
+        return view('detalle-ordenes.create',compact('orden','producto'));
     }
 
     /**
@@ -84,8 +88,9 @@ class DetalleOrdenesController extends Controller
     public function edit($id)
     {
         $detalleordene = DetalleOrden::findOrFail($id);
-
-        return view('detalle-ordenes.edit', compact('detalleordene'));
+        $orden = Orden::All();
+        $producto = Producto::All();
+        return view('detalle-ordenes.edit', compact('detalleordene','orden','producto'));
     }
 
     /**

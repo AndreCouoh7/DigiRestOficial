@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('adminlte::layouts.app')
 
-@section('content')
+@section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            
 
             <div class="col-md-9">
                 <div class="card">
@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>IdZona</th><th>Numero</th><th>Actions</th>
+                                        <th>#</th><th>Zona</th><th>Numero</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($mesas as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->idZona }}</td><td>{{ $item->numero }}</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->zona->nombre }}</td><td>{{ $item->numero }}</td>
                                         <td>
                                             <a href="{{ url('/mesas/' . $item->id) }}" title="View Mesa"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/mesas/' . $item->id . '/edit') }}" title="Edit Mesa"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

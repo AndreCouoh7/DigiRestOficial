@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('adminlte::layouts.app')
 
-@section('content')
+@section('main-content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+            
 
             <div class="col-md-9">
                 <div class="card">
@@ -27,7 +27,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $mesa->id }}</td>
                                     </tr>
-                                    <tr><th> IdZona </th><td> {{ $mesa->idZona }} </td></tr><tr><th> Numero </th><td> {{ $mesa->numero }} </td></tr>
+                                    <tr><th> Zona </th><td> {{ $mesa->zona->nombre }} </td></tr><tr><th> Numero </th><td> {{ $mesa->numero }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

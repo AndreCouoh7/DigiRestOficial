@@ -6,6 +6,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Asignacion;
+use App\Mesero;
+use App\Mesa;
 use Illuminate\Http\Request;
 
 class AsignacionesController extends Controller
@@ -39,7 +41,14 @@ class AsignacionesController extends Controller
      */
     public function create()
     {
-        return view('asignaciones.create');
+        
+        $mesas = Mesa::All();
+        $meseros = Mesero::All();
+        return view('asignaciones.create',array(
+            'mesas' => $mesas,
+            'meseros' => $meseros
+        ));
+
     }
 
     /**
@@ -83,8 +92,17 @@ class AsignacionesController extends Controller
     public function edit($id)
     {
         $asignacione = Asignacion::findOrFail($id);
+           
+        $mesas = Mesa::All();
+        $meseros = Mesero::All();
+        return view('asignaciones.edit',array(
+        'mesas' => $mesas,
+        'meseros' => $meseros,
+        'asignacione' => $asignacione
+        ));
 
-        return view('asignaciones.edit', compact('asignacione'));
+
+        // return view('asignaciones.edit', compact('asignacione','mesas','meseros'));
     }
 
     /**
