@@ -34,12 +34,40 @@
             <li class="header">DigiRest</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('dashboard') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
-                    {{-- Meseros --}}
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Meseros</span> <i class="fa fa-angle-left pull-right"></i></a>
+           <!--  <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
+                    {{-- Meseros --}} -->
+
+             <li class="treeview">
+                <a href="#"><i class='fa fa-clipboard'></i> <span>Ordenes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('/meseros/create')}}">Crear Mesero</a></li>
+                    <li><a href="{{url('/ordenes/create')}}">Crear Orden</a></li>
+                    <li><a href="{{ url('/ordenes')}}">Mostrar Ordenes</a></li>
+                    <li><a href="{{ url('/detalle-ordenes')}}">Detalle Ordenes</a></li>
+                    
+                </ul>
+            </li>
+             <li class="treeview">
+                <a href="#"><i class='fa fa-check'></i> <span>Asignaciones</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('/asignaciones/create')}}">Crear Asignacion</a></li>
+                    <li><a href="{{ url('/asignaciones')}}">Mostrar Asignaciones</a></li>
+                    
+                </ul>
+            </li>
+
+             <li class="treeview">
+                <a href="#"><i class='fa fa-cutlery'></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('/productos/create')}}">Agregar Productos</a></li>
+                    <li><a href="{{ url('/productos')}}">Mostrar Productos</a></li>
+                    
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-user'></i> <span>Meseros</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('/meseros/create')}}">Agregar Mesero</a></li>
                     <li><a href="{{ url('/meseros')}}">Mostrar Meseros</a></li>
                     <li><a href="/"></a></li>
                     
@@ -47,23 +75,16 @@
             </li>
         
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Cajeros</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-user'></i> <span>Cajeros</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/cajeros/create')}}">Agregar Cajeros</a></li>
                     <li><a href="{{ url('/cajeros')}}">Mostrar Cajeros</a></li>
                     
                 </ul>
             </li>
+           
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Asignaciones</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{url('/asignaciones/create')}}">Crear Asignacion</a></li>
-                    <li><a href="{{ url('/asignaciones')}}">Mostrar Asignaciones</a></li>
-                    
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Clientes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-user'></i> <span>Clientes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/clientes/create')}}">Agregar Cliente</a></li>
                     <li><a href="{{ url('/clientes')}}">Mostrar Clientes</a></li>
@@ -71,29 +92,15 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-user'></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{url('/usuarios/create')}}">Crear Usuario</a></li>
                     <li><a href="{{ url('/usuarios')}}">Mostrar Usuarios</a></li>
                     
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{url('/productos/create')}}">Agregar Productos</a></li>
-                    <li><a href="{{ url('/productos')}}">Mostrar Productos</a></li>
-                    
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Ordenes</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{url('/ordenes/create')}}">Crear Orden</a></li>
-                    <li><a href="{{ url('/ordenes')}}">Mostrar Ordenes</a></li>
-                    
-                </ul>
-            </li>
+           
+           
         
         
         

@@ -11,7 +11,7 @@
          selected 
          @endif
         >
-    {{$u->nombre}}
+    {{$u->nombre}} {{$u->apellido}}
     </option>
     @endforeach
     </select>

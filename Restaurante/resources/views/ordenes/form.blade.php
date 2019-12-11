@@ -14,7 +14,7 @@
          selected 
          @endif
         >
-    {{$m->numero}}
+    {{$m->numero}}|{{$m->zona->nombre}}
     </option>
     @endforeach
     </select>

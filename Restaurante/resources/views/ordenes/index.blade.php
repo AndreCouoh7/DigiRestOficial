@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->Numero }}</td>
-                                    <td>{{ $item->mesa->numero }}</td>
+                                    <td>{{ $item->mesa->numero }}|{{$item->mesa->zona->nombre}} </td>
                                     <td>
                                         <a href="{{ url('/ordenes/' . $item->id) }}" title="View Ordene"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                         <a href="{{ url('/ordenes/' . $item->id . '/edit') }}" title="Edit Ordene"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

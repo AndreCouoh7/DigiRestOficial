@@ -42,8 +42,8 @@ class AgregarProductoOrdenTest extends TestCase
 		  $response->assertStatus(200);//Si hay respuesta
         $this->assertEquals($sumar2, $sumar + $numero);
 
-		//$this->assertDatabaseHas('detalleOrden', [
-   // 'idProducto' => '1', 'cantidad'=>'1',
+		//$this->assertDatabaseHas('detalle_ordenes', [
+   //'idProducto' => '1', 'cantidad'=>'1',
 //]);
     }
 }
