@@ -18,6 +18,9 @@ class AsignacionesTest extends TestCase
        	$idmesa=1;
 		$response=$this->json('POST','/api/V1/IAsignacion/asignar/'.$idmesero.'/'.$idmesa);
 		$response->assertStatus(200);//Si hay respuesta
-		//$response->assertJson(['r'=>$x]);//Validacion de respuesta del calculo
+        $this->assertDatabaseHas('asignaciones',['idMesa'=>'1','idMesero'=>'1']);
+        
+        
+        //Validacion de respuesta del calculo
     }
 }
